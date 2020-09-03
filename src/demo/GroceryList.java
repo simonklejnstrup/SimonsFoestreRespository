@@ -11,6 +11,8 @@ public class GroceryList {
             }
         }
 
+        //METODE ER IKKE FÆRDIG
+
 
 
 
