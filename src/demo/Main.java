@@ -7,7 +7,7 @@ public class Main {
         GroceryList newGroceryItem = new GroceryList();
 
         //newGroceryItem.tilføjTilFil();
-        newGroceryItem.læsFraFIl();
+        //newGroceryItem.læsFraFIl();
 
 
 
