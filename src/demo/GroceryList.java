@@ -1,9 +1,9 @@
 package demo;
 
 public class GroceryList {
-    String[] orders = new String[10];
+    GroceryItemOrder[] orders = new GroceryItemOrder[10];
 
-    public void add(String order){
+    public void add(GroceryItemOrder order){
         for (int i = 0; i <orders.length ; i++) {
             if (orders[i] == null){
                 orders[i] = order;
