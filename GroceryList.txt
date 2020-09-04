@@ -1,0 +1,4 @@
+name = hej quantity = 1 Total Cost = 1.0
+name = test quantity = 1 Total Cost = 1.0
+name = test quantity = 1 Total Cost = 1.0
+name = test1 quantity = 20 Total Cost = 400.0

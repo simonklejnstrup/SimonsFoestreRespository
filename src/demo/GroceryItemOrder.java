@@ -46,10 +46,9 @@ public class GroceryItemOrder {
 
     @Override
     public String toString() {
-        return "CroceryItemOrder" +
-                "name = " + name +
+        return "name = " + name +
                 " quantity = " + quantity +
-                " Total Cost = " + quantity*pricePerUnit;
+                " Total Cost = " + quantity*pricePerUnit + "\n";
 
     }
 }

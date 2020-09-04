@@ -4,8 +4,15 @@ public class Main {
 
     public static void main(String[] args) {
 
-        GroceryList a = new GroceryList();
-        //a.add();
+        GroceryList newGroceryItem = new GroceryList();
+
+        newGroceryItem.tilføjTilFil();
+
+
+
+
+
+
 
     }
 }
