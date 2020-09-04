@@ -7,12 +7,14 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class FilHåndtering {
+    GroceryList groceryList = new GroceryList();
 
     public  void tilføjTilFil() {
         GroceryItemOrder ny;
         Scanner scan = new Scanner(System.in);
         try {
             PrintStream ps = new PrintStream(new FileOutputStream("GroceryList.txt", true));
+
             System.out.println("Navn på vare");
             String navn = scan.nextLine();
 
@@ -20,7 +22,7 @@ public class FilHåndtering {
             int quantity = scan.nextInt();
 
             System.out.println("Pris per vare");
-            double pris = scan.nextInt();
+            int pris = scan.nextInt();
 
             ny = new GroceryItemOrder(navn, quantity, pris);
             ps.print(ny);
@@ -32,8 +34,14 @@ public class FilHåndtering {
     public void læsFraFIl() {
         File file = new File("GroceryList.txt");
         try (Scanner scan = new Scanner(file)) {
-            while (scan.hasNext()) {
-                System.out.println(scan.nextLine());
+            //scan.useDelimiter(" ");
+            while (scan.hasNextLine()) {
+                String navn = scan.next();
+                int quantity = scan.nextInt();
+                int pris = scan.nextInt();
+
+                GroceryItemOrder gIO = new GroceryItemOrder(navn, quantity, pris);
+                groceryList.add(gIO);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

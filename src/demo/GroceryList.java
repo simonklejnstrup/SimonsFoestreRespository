@@ -17,12 +17,16 @@ public class GroceryList {
         return "Order added succesfully";
     }
 
-    public double getTotalCost(){
-        double sum = 0;
+    public int getTotalCost(){
+        int sum = 0;
         for (GroceryItemOrder o : orders) {
             sum += o.getCost();
         }
         return sum;
+    }
+
+    public int getOrdersSize() {
+        return orders.size();
     }
 
     @Override

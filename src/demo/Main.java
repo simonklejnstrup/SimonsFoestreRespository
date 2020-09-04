@@ -4,10 +4,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        GroceryList newGroceryItem = new GroceryList();
+        Controller controller = new Controller();
 
-        //newGroceryItem.tilføjTilFil();
-        //newGroceryItem.læsFraFIl();
+        controller.run();
+
+
 
 
 
