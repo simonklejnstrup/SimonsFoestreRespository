@@ -7,7 +7,6 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class FilHåndtering {
-    GroceryList groceryList = new GroceryList();
 
     public  void tilføjTilFil() {
         GroceryItemOrder ny;
@@ -31,7 +30,8 @@ public class FilHåndtering {
         }
     }
 
-    public void læsFraFIl() {
+    public GroceryList læsFraFIl() {
+        GroceryList groceryList = new GroceryList();
         File file = new File("GroceryList.txt");
         try (Scanner scan = new Scanner(file)) {
             //scan.useDelimiter(" ");
@@ -40,11 +40,14 @@ public class FilHåndtering {
                 int quantity = scan.nextInt();
                 int pris = scan.nextInt();
 
-                GroceryItemOrder gIO = new GroceryItemOrder(navn, quantity, pris);
-                groceryList.add(gIO);
+                System.out.println(groceryList.add(new GroceryItemOrder(navn, quantity, pris)));
+                System.out.println(groceryList.getOrdersSize());
+                //groceryList.add(new GroceryItemOrder(navn, quantity, pris));
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        return groceryList;
     }
+
 }

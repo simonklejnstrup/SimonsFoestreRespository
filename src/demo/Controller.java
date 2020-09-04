@@ -3,10 +3,10 @@ package demo;
 public class Controller {
 
     FilHåndtering filHåndtering = new FilHåndtering();
-    GroceryList groceryList = new GroceryList();
+    GroceryList groceryList;
 
     public void run(){
-        filHåndtering.læsFraFIl();
+        groceryList = filHåndtering.læsFraFIl();
 
         System.out.println(groceryList.getOrdersSize());
     }
