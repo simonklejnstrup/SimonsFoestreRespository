@@ -3,33 +3,17 @@ package demo;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class GroceryList {
-    GroceryItemOrder[] orders = new GroceryItemOrder[10];
+    ArrayList<GroceryItemOrder> orders = new ArrayList<>();
 
     public String add(GroceryItemOrder order){
-        for (int i = 0; i <orders.length ; i++) {
-            if (orders[i] == null){
-                orders[i] = order;
-                break;
-            }
-        }
-        boolean empty = true;
-        for (GroceryItemOrder o : orders) {
-            if (o != null) {
-                empty = false;
-                break;
-            }
-        }
-        String message = "";
-        if (empty){
-            message = "Grocerylist is full. Order not added.";
-        } else {
-            message = "Order added succesfully";
-        }
-        return message;
+        orders.add(order);
+
+        return "Order added succesfully";
     }
 
     public double getTotalCost(){
@@ -65,7 +49,7 @@ public class GroceryList {
     @Override
     public String toString() {
         return "GroceryList{" +
-                "orders=" + Arrays.toString(orders) +
+                "orders=" + orders.toString() +
                 '}';
     }
 }
